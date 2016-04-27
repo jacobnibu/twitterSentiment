@@ -1,0 +1,14 @@
+{
+    "consumer_key": "okfBG35XHmvFtNRJnA8gf4Pc9",
+    "consumer_secret": "32bPSC8nkkOwuoOe7OjdTgHldz5tegEBT6wtFCbjskYyivkvLW",
+    "access_token": "201883620-xIiQs3hAzwpBeHMJ9xqf2FH47WyEnKxwNVIZBVg3",
+    "access_token_secret": "bEw0ouvwyn3BcXZfbyb1oJpCVQ1swjuOrYnEQ7O2mdBu9",
+    "algorithm_to_test": "naivebayes",
+	"training_data": "./data/training_data.csv",
+	"tweets_data": "./data/tweets_data.csv",
+	"classifier": "./data/input/naivebayes_model.pickle",
+	"time_period": "daily",
+	"keywords": "hillary-trump",
+	"training_required": 0
+}
+
