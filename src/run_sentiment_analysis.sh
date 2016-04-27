@@ -42,7 +42,7 @@ echo "-----------------------------------------------"
 echo "======================================"
 echo "Starting to train the classifier model"
 echo "======================================"
-python /home/cc/sw-project-template/src/main.py
+python /home/cc/twitterSentiment/src/main.py
 #python /home/cc/sw-project-template/src/main.py &
 #wait
 echo "completed training the model"
