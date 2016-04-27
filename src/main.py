@@ -24,7 +24,7 @@ try:
 except:
 	training_data = "./data/training_data.csv"
 	tweets_data = "./data/tweets_data.csv"
-	classifier = "./data/input/naivebayes_model.pickle"
+	classifier = "./input/naivebayes_model.pickle"
 	time_period = "daily"
 	keywords = "hillary-trump"
 	training_required = 0
@@ -59,16 +59,16 @@ except:
 
 
 # check if tweets data files are missing
-if not os.path.exists('../data/input/hillary.txt'):
+if not os.path.exists('./input/hillary.txt'):
 	keyword = 'hillary'
-	trainingDataFile = '../data/input/hillary.txt'
+	trainingDataFile = './input/hillary.txt'
 	inpfile = open(trainingDataFile, "r")
 	lines = inpfile.read().split()
 	tweets = []
 	for tweet in tweets:
 		tweets.append(tweet)
 	time = 'daily'
-	classifierDumpFile = '../data/input/naivebayes_model.pickle'
+	classifierDumpFile = './input/naivebayes_model.pickle'
 	trainingRequired = 0
 	# instantiate the instance of classifier class
 	nb = naive_bayes_classifier.NaiveBayesClassifier(tweets, keyword, time, \
@@ -80,7 +80,7 @@ if not os.path.exists('../data/input/hillary.txt'):
 #	twitterData = get_twitter_data.TwitterData()
 #	tweets = twitterData.getTwitterData(keyword, time)
 
-if not os.path.exists('../data/input/trump.txt'):
+if not os.path.exists('./input/trump.txt'):
 	keyword = 'trump'
 #	time = 'lastweek'
 #	twitterData = get_twitter_data.TwitterData()
