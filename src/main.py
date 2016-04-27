@@ -61,7 +61,7 @@ except:
 # check if tweets data files are missing
 if not os.path.exists('./input/hillary.txt'):
 	keyword = 'hillary'
-	trainingDataFile = './input/hillary.txt'
+	trainingDataFile = 'input/hillary.txt'
 	inpfile = open(trainingDataFile, "r")
 	lines = inpfile.read().split()
 	tweets = []
