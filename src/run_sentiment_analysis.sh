@@ -45,36 +45,20 @@ echo "======================================"
 python /home/cc/twitterSentiment/src/main.py
 #python /home/cc/sw-project-template/src/main.py &
 #wait
-echo "completed training the model"
-sleep 1
+#echo "completed training the model"
+#sleep 1
 
 # call hadoop to run the model on test
-echo "starting to run the model on tweets related to Hillary"
-echo "First iteration of Hadoop process"
-trainingDataFile = '../data/input/hillary.txt'
-inpfile = open(trainingDataFile, "r")
-lines = inpfile.read().split()
-tweets = []
-for tweet in tweets:
-    tweets.append(tweet)
-keyword = 'hillary'
-time = 'daily'
-classifierDumpFile = '../data/input/naivebayes_model.pickle'
-trainingRequired = 0
-# instantiate the instance of classifier class
-nb = naive_bayes_classifier.NaiveBayesClassifier(tweets, keyword, time, \
-							  trainingDataFile, classifierDumpFile, trainingRequired)
-# run the classifier model on tweets
-nb.classify()
-nb.getHTML()
+#echo "starting to run the model on tweets related to Hillary"
+#echo "First iteration of Hadoop process"
 #hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar -D mapred.reduce.tasks=1 -file /home/cc/sw-project-template/src/sentiment_mapper.py -mapper "sentiment_mapper.py hillary" -file /home/cc/sw-project-template/src/sentiment_reducer.py -reducer "sentiment_reducer.py" -input /tmp/input/hillary.txt -output /tmp/output_hillary -file /home/cc/sw-project-template/data/input/feature_list.txt -file /home/cc/sw-project-template/data/input/naivebayes_model.pickle
-echo "Completed the first iteration of hadoop"
-echo "=========================>>>>>><<<<<<<========================"
-sleep 1
-echo "starting to run the model on tweets related to Trump"
-echo "Second iteration of Hadoop process"
+#echo "Completed the first iteration of hadoop"
+#echo "=========================>>>>>><<<<<<<========================"
+#sleep 1
+#echo "starting to run the model on tweets related to Trump"
+#echo "Second iteration of Hadoop process"
 #hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-*.jar -D mapred.reduce.tasks=0 -file /home/cc/sw-project-template/src/sentiment_mapper.py -mapper '/home/cc/sw-project-template/src/sentiment_mapper.py trump' -input hdfs://futuresystems/tmp/input/trump.txt -output hdfs://futuresystems/tmp/output_trump
-echo "Completed the second iteration of hadoop"
+#echo "Completed the second iteration of hadoop"
 echo "Analysis phase completed"
 echo "=========================>>>>>><<<<<<<========================"
 sleep 1

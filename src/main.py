@@ -42,19 +42,6 @@ if training_required:
 	tweets = []
 	nb = NaiveBayesClassifier(tweets, keywords, time_period, training_data, classifier, training_required)
 
-# check if tweets data files are missing
-if not os.path.exists('./data/hillary.txt'):
-	keyword = 'hillary'
-#	time = 'lastweek'
-#	twitterData = get_twitter_data.TwitterData()
-#	tweets = twitterData.getTwitterData(keyword, time)
-
-if not os.path.exists('./data/trump.txt'):
-	keyword = 'trump'
-#	time = 'lastweek'
-#	twitterData = get_twitter_data.TwitterData()
-#	tweets = twitterData.getTwitterData(keyword, time)
-
 # create the HBase tweets table if missing
 print "Checking database tables..."
 try:
@@ -69,6 +56,36 @@ try:
 except:
 	print "Table already exists"
 #	log('Table already exists; skipping creation.')
+
+
+# check if tweets data files are missing
+if not os.path.exists('../data/input/hillary.txt'):
+	keyword = 'hillary'
+	trainingDataFile = '../data/input/hillary.txt'
+	inpfile = open(trainingDataFile, "r")
+	lines = inpfile.read().split()
+	tweets = []
+	for tweet in tweets:
+		tweets.append(tweet)
+	time = 'daily'
+	classifierDumpFile = '../data/input/naivebayes_model.pickle'
+	trainingRequired = 0
+	# instantiate the instance of classifier class
+	nb = naive_bayes_classifier.NaiveBayesClassifier(tweets, keyword, time, \
+								  trainingDataFile, classifierDumpFile, trainingRequired)
+	# run the classifier model on tweets
+	nb.classify()
+	nb.getHTML()
+#	time = 'lastweek'
+#	twitterData = get_twitter_data.TwitterData()
+#	tweets = twitterData.getTwitterData(keyword, time)
+
+if not os.path.exists('../data/input/trump.txt'):
+	keyword = 'trump'
+#	time = 'lastweek'
+#	twitterData = get_twitter_data.TwitterData()
+#	tweets = twitterData.getTwitterData(keyword, time)
+
 
 
 '''
