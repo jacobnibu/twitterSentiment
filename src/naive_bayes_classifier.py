@@ -10,7 +10,7 @@ class NaiveBayesClassifier:
     #start __init__
     def __init__(self, data, keyword, time, trainingDataFile, classifierDumpFile, trainingRequired = 0):
         #Instantiate classifier helper        
-        self.helper = classifier_helper.ClassifierHelper('../data/input/feature_list.txt')
+        self.helper = classifier_helper.ClassifierHelper('/home/cc/twitterSentiment/src/input/feature_list.txt')
         
         self.lenTweets = len(data)
         self.origTweets = self.getUniqData(data)

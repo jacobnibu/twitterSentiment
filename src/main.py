@@ -60,18 +60,19 @@ except:
 
 # check if tweets data files are missing
 if not os.path.exists('./input/hillary.txt'):
+	dir = os.path.realpath('..')
 	keyword = 'hillary'
-	trainingDataFile = 'input/hillary.txt'
+	trainingDataFile = '/home/cc/twitterSentiment/src/input/hillary.txt'
 	inpfile = open(trainingDataFile, "r")
 	lines = inpfile.read().split()
 	tweets = []
 	for tweet in tweets:
 		tweets.append(tweet)
 	time = 'daily'
-	classifierDumpFile = './input/naivebayes_model.pickle'
+	classifierDumpFile = '/home/cc/twitterSentiment/src//input/naivebayes_model.pickle'
 	trainingRequired = 0
 	# instantiate the instance of classifier class
-	nb = naive_bayes_classifier.NaiveBayesClassifier(tweets, keyword, time, \
+	nb = NaiveBayesClassifier(tweets, keyword, time, \
 								  trainingDataFile, classifierDumpFile, trainingRequired)
 	# run the classifier model on tweets
 	nb.classify()
