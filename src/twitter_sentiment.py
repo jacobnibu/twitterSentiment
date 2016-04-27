@@ -1,8 +1,9 @@
-import web
+#import web
 
 import get_twitter_data
 
-import baseline_classifier, naive_bayes_classifier, max_entropy_classifier, libsvm_classifier
+#import baseline_classifier, naive_bayes_classifier, max_entropy_classifier, libsvm_classifier
+import naive_bayes_classifier
 import json, logging, html_helper
 
 urls = (

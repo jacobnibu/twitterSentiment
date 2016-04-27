@@ -76,7 +76,10 @@ if not os.path.exists('./input/hillary.txt'):
 								  trainingDataFile, classifierDumpFile, trainingRequired)
 	# run the classifier model on tweets
 	nb.classify()
-	nb.getHTML()
+	htmlcode = nb.getHTML()
+	htmlfile = open('/var/www/html/index.html','w')
+	htmlfile.write(htmlcode)
+	htmlfile.close()
 #	time = 'lastweek'
 #	twitterData = get_twitter_data.TwitterData()
 #	tweets = twitterData.getTwitterData(keyword, time)
